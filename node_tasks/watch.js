@@ -7,68 +7,30 @@ var _ENV_ = process.env.NODE_ENV;
 
 gulp.task('watch', function () {
 
+    gulp.watch([conf.app + '/**/*.styl',], ['styl-base'])
+        .on('change', function (file) {
+
+        });
+
+    gulp.watch(conf.app + '/components/**/*.styl', ['styl-components'])
+        .on('change', function (file) {
+
+        });
+
+    // components
     gulp.watch([
-            conf.styl + '/**/*.styl',
-            '!' + conf.styl + '/**/ticket.styl',
-            '!' + conf.styl + '/**/ie.styl',
-            '!' + conf.styl + '/**/print.styl'
-    ], ['styl-common'])
-        .on('change', function (file) {
-
-        });
-
-    gulp.watch(conf.src + '/components/**/*.styl', ['styl-components', 'styl-adv'])
-        .on('change', function (file) {
-
-        });
-
-    gulp.watch(conf.src + '/widgets/**/*.styl', ['styl-widget-search'])
-        .on('change', function (file) {
-
-        });
-
-    gulp.watch(conf.src + '/pages/**/*.styl', ['styl-pages'])
-        .on('change', function (file) {
-
-        });
-
-    gulp.watch(conf.src + '/regions/**/*.styl', ['styl-regions'])
-        .on('change', function (file) {
-
-        });
-
-    gulp.watch(conf.styl + '/partners/**/*.styl', ['styl-partners'])
-        .on('change', function (file) {
-
-        });
-
-    // components page regions
-    gulp.watch([
-            conf.src + '/components/**/*.js',
-            conf.src + '/pages/**/*.js',
-            conf.src + '/regions/**/*.js'
-    ], ['concat-comp-page-regions']);
+            conf.app + '/components/**/*.js',
+    ], ['concat-components']);
 
     gulp.watch([
             conf.templ + '/**/*.html',
-            conf.src + '/**/*.html'
+            conf.app + '/**/*.html'
     ], ['build-templates']);
 
 
     gulp.watch([
-            conf.src + '/app.js',
-            conf.src + '/tracking.js',
-            conf.src + '/config.js',
-            conf.src + '/filters.js',
-            conf.src + '/mediator.js',
-
-            conf.src + '/controllers/**/*.js',
-            conf.src + '/services/**/*.js',
-            conf.src + '/directives/**/*.js',
-            conf.src + '/models/**/*.js',
-            conf.src + '/helpers/**/*.js',
-            conf.src + '/ang.helpers/**/*.js'
-    ], ['build-angular-parts'])
+            conf.app + '/app.js'
+    ], ['concat-app'])
         .on('change', function (file) {
 
         });
