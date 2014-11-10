@@ -1,0 +1,7 @@
+{
+    "build": "./build",
+    "libs": "./libs",
+    "bower": "./libs/bower_components",
+    "app": "./app",
+    "config_path": "./node_tasks/config.json"
+}
