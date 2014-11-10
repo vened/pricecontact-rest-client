@@ -14,7 +14,7 @@ gulp.task('build-templates', function () {
     ])
         .pipe(cleanhtml())
         .pipe(templateCache({
-            module: 'appTemplates'
+            module: 'app'
         }))
         .pipe(uglify({
             mangle: false,
