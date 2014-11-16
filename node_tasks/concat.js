@@ -13,9 +13,11 @@ var _ENV_ = process.env.NODE_ENV || '';
  */
 gulp.task('concat-libs', function () {
     return gulp.src([
-            conf.bower + '/angular/angular.min.js',
-            conf.bower + '/angular-ui-router/release/angular-ui-router.min.js'
-//            conf.libs + '/angular/1.3.2/angular-*.js'
+            conf.bower + '/angular/angular.js',
+            conf.bower + '/angular-resource/angular-resource.js',
+            conf.bower + '/angular-ui-router/release/angular-ui-router.js',
+            conf.bower + '/angular-ui-bootstrap/ui-bootstrap-0.11.2.js',
+            conf.bower + '/angular-ui-bootstrap/ui-bootstrap-tpls-0.11.2.js'
     ])
 
         .pipe(concat('libs.js', {insertSourceName: {open: '/*', close: '*/'}}))
