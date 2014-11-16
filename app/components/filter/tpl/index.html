@@ -1,0 +1,16 @@
+<h3>{{filter}}</h3>
+{{filters}}
+
+<form role="form" name="formFilter">
+	<dl ng-repeat="filter in filters">
+		<dt>{{filter.title}}</dt>
+		<dd>
+			<div class="checkbox" ng-repeat="val in filter.values">
+				<label>
+					<input type="checkbox" name="filter.name" mg-model="ft"> 
+					{{val.label}}
+				</label>
+			</div>
+		</dd>
+	</dl>
+</form>
