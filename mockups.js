@@ -1,0 +1,3 @@
+exports.filters = {
+	"brands" : "Бренды"
+};

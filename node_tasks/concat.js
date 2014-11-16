@@ -46,7 +46,7 @@ gulp.task('concat-components', function () {
 gulp.task('concat-app', function () {
     return gulp.src([
             conf.app + '/app.js',
-            conf.app + '/app-states.js'
+            conf.app + '/services/**/*.js'
     ])
         .pipe(concat('app.js'))
         .pipe(gulp.dest(conf.build + '/js'))

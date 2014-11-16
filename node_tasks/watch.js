@@ -30,7 +30,7 @@ gulp.task('watch', function () {
 
     gulp.watch([
             conf.app + '/app.js',
-            conf.app + '/app-states.js'
+            conf.app + '/services/**/*.js'
     ], ['concat-app'])
         .on('change', function (file) {
 
