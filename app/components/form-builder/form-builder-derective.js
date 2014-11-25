@@ -4,21 +4,18 @@ appComponents.
 		function ($templateCache)
 		{
 			return {
-				restrict  : 'E',
-				replace   : false,
-				template  : $templateCache.get('components/form-builder/tpl/form-builder.html'),
-				scope     : {
-					forms: '='
+				restrict: 'E',
+				replace : false,
+				template: $templateCache.get('components/form-builder/tpl/form-builder.html'),
+				scope   : {
+					formTemplate: '='
 				},
-				controller: function ($scope)
+				link    : function ($scope, element, attrs)
 				{
-					$scope.$watch('forms', function(data){
+					$scope.$watch('formTemplate', function (data)
+					{
 						console.log(data)
 					})
-				},
-				link      : function ($scope, $element, attrs)
-				{
-					
 				}
 			};
 		}
